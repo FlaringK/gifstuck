@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GIF STUCK</title>
+
+  <meta property="og:title" content="GifStuck" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flaringk.github.io/GifStuck" />
+  <meta property="og:image" content="https://pipe.miroware.io/5f586dbe02740c4a7fb69f99/Ididart/Icon.png" />
+  <meta property="og:description" content="Generate Gifs from HouseTrapped" />
+  <meta name="theme-color" content="#cccccc">
+
+  <link rel="stylesheet" href="./main.css">
+
+  <script src="./generators.js"></script>
+</head>
+<body>
+
+  <div id="main">
+    <h1 id="title"><a href="/" class="clean hovemph">Welcome to Gifstuck</a></h1>
+
+    <div id="home" style="display: none;">
+      <img src="./assets/Flare-victory-even.gif" alt="">
+      <div id="intro" class="boxIn">Welcome to <span class="emph1">GIFstuck</span>, an easy way to make all your Homestuck Gifs. Please choose a generator to begin</div>
+
+      <div id="genList">
+
+      </div>
+    </div>
+  
+    <div id="generator" style="display: none;">
+
+      <h2 class="secHeader">📁 Upload Assets</h2>
+      <div id="upload"></div>
+    
+      <h2 class="secHeader">⚙️ Options</h2>
+      <div id="options"></div>
+  
+      <h2 id="loadStatus" class="secHeader">⌛ Assets loaded: 0 / 12</h2>
+      <div id="fonts"></div>
+
+      <button id="createGif" class="bigbutton" onclick="primeGif()">Create GIF</button>
+      
+      <div id="loading">Loading</div>
+  
+      <img id="finalOutput" src="./assets/basic.png">
+
+      <button id="download" class="bigbutton">Download GIF</button>
+  
+    </div>
+  </div>
+
+  <canvas width="650" height="450" id="bitmap" style="display: none"></canvas>
+  <canvas width="650" height="450" id="bitmapCopy" style="display: none"></canvas>
+  <div id="preload" style="display: none;"></div>
+
+  <script src="./gifjs/gif.js-master/dist/gif.js"></script>
+  <script src="./main.js"></script>
+  <script src="./createGif.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+@font-face {
+  font-family: alternian;
+  src: url(./assets/fonts/alternian.ttf);
+}
+
+@font-face {
+  font-family: courierstuck;
+  src: url(./assets/fonts/courierstuck.ttf);
+}
+
+@font-face {
+  font-family: fontstuck;
+  src: url(./assets/fonts/fontstuck.ttf);
+}
+
+@font-face {
+  font-family: captchacard;
+  src: url(./assets/fonts/SylladexFanon.ttf);
+}
+
+:root {
+  --col1: #CFCBCA;
+  --col2: #D8DDDE;
+  --col3: #D9F7FA;
+  --col4: #ABA194;
+  --col5: #9C6459;
+  --col6: #8C271E;
+}
+
+:root {
+  /* --col1: #320E3BAA;
+  --col2: #29537F;
+  --col3: #2584E0;
+  --col4: #BF3740;
+  --col5: #EC966B;
+  --col6: #DAD8CD; */
+
+  --shadIn: var(--col1) -2px -2px 4px 0,var(--col3) 2px 2px 4px 0;
+  --shadOut: var(--col1) 6px 6px 10px 0,var(--col3) -6px -6px 8px 0;
+  --shadHov: var(--col1) 2px 2px 4px 0,var(--col3) -2px -2px 4px 0;
+}
+
+body { 
+  background-color: var(--col2); 
+  color: var(--col6);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+#main {
+  width: 800px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+.emph1 { color: var(--col4); }
+.emph2, .hovemph:hover { color: var(--col5); }
+
+a.clean {
+  color: var(--col6);
+  text-decoration: none;
+}
+a.clean:hover {
+  color: var(--col5);
+}
+
+.boxIn {
+  padding: 1em 2em;
+  box-shadow: var(--shadIn);
+  border-radius: 1em;
+}
+
+.boxOut {
+  padding: 1em 2em;
+  box-shadow: var(--shadOut);
+  border-radius: 1em;
+}
+
+/* HOME */
+
+#home img {
+  display: block;
+  margin-left: 200px;
+}
+
+#genList {
+  padding: 1em 2em;
+  width: max-content;
+}
+
+#genList .genSelect {
+  box-shadow: var(--shadOut);
+  margin: 1em;
+  padding: .25em .5em;
+  border-radius: .5em;
+
+  transition: box-shadow 0.25s;
+}
+
+#genList .genSelect:hover { box-shadow: var(--shadHov); }
+#genList .genSelect:active { box-shadow: var(--shadIn); }
+
+/* GENERATOR */
+
+.secHeader {
+  text-decoration: underline;
+}
+
+.uploadImg {
+  display: block;
+  margin: 1em 0;
+  box-shadow: var(--shadIn);
+  border-radius: 1em;
+  max-height: 180px;
+}
+
+.optionSec, .uploadSec {
+  margin-left: 30px;
+  position: relative;
+}
+
+.optionSec h2 {
+  margin-bottom: 0;
+}
+
+.optionSec::before, .uploadSec::before {
+  content: "> ";
+  position: absolute;
+  top: 0; left: -30px;
+  font-size: x-large;
+}
+
+.optionSec .variableAmountCounter ~ * {
+  margin-left: 30px;
+}
+
+.optionSec .radioWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.optionSec input[type="radio"] {
+  display: none;
+}
+
+.optionSec input[type="radio"] + label {
+  display: block;
+  width: max-content;
+  box-shadow: var(--shadOut);
+  margin: .5em;
+  padding: .25em .5em;
+  border-radius: 5em;
+
+  transition: box-shadow 0.25s;
+}
+
+.optionSec input[type="radio"] + label:hover {
+  box-shadow: var(--shadHov);
+  color: var(--col5);
+}
+
+.optionSec input[type="radio"]:checked + label { 
+  box-shadow: var(--shadIn);
+  color: var(--col4);
+} 
+
+.optionSec input[type="text"], .optionSec input[type="number"], .optionSec select {
+  box-shadow: var(--shadIn);
+  margin: .5em;
+  padding: .25em .5em;
+  border-radius: 5em;
+  
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  
+  background: var(--col5);
+  border: none;
+}
+
+.optionSec .wide {
+  display: block;
+  width: 600px;
+}
+
+.bigbutton {
+  display: block;
+  width: max-content;
+  box-shadow: var(--shadOut);
+  margin: .5em auto;
+  padding: .25em .5em;
+  border-radius: 5em;
+
+  transition: box-shadow 0.25s;
+
+  background: var(--col5);
+  border: none;
+  
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 600;
+  font-size: xx-large;
+}
+
+.bigbutton:hover { box-shadow: var(--shadHov); }
+.bigbutton:active { box-shadow: var(--shadIn); }
+
+#finalOutput {
+  box-shadow: var(--shadOut);
+  margin: 2em auto;
+  display: block;
+  border-radius: 1em;
+}
+
+/* LOADING */
+
+#loading {
+  margin: auto;
+  width: max-content;
+  display: none;
+}
+
+#loading:after {
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;    
+  animation: ellipsis steps(4,end) 2s infinite;
+  content: "..."; /* ascii code for the ellipsis character */
+  width: 0px;
+}
+
+@keyframes ellipsis {
+  to {
+    width: 2.5em;    
+  }
+}
