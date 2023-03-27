@@ -28,12 +28,12 @@
 }
 
 :root {
-  /* --col1: #320E3BAA;
+  --col1: #320E3BAA;
   --col2: #29537F;
   --col3: #2584E0;
   --col4: #BF3740;
   --col5: #EC966B;
-  --col6: #DAD8CD; */
+  --col6: #DAD8CD;
 
   --shadIn: var(--col1) -2px -2px 4px 0,var(--col3) 2px 2px 4px 0;
   --shadOut: var(--col1) 6px 6px 10px 0,var(--col3) -6px -6px 8px 0;
