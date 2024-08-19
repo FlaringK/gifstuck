@@ -37,7 +37,7 @@ const loadHomepage = () => {
     genList.innerHTML += `<a href="?gen=${e}" class="clean"><div class="genSelect">> ${generators[e].name}</div></a>`
   })
 
-  setTitle("https://flaringk.github.io/gifstuck/")
+  setTitle("/gifstuck/")
 }
 
 const genVarAmountFunc = el => () => {
@@ -70,7 +70,7 @@ const loadGenerator = genKey => {
   genWrap.style.display = "block"
   const generator = generators[genKey]
 
-  setTitle("/?gen=" + genKey)
+  setTitle("/gifstuck/?gen=" + genKey)
 
   // Height and width
   if ("height" in generator) canvas.height = generator.height
