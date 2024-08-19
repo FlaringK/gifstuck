@@ -37,7 +37,7 @@ const loadHomepage = () => {
     genList.innerHTML += `<a href="?gen=${e}" class="clean"><div class="genSelect">> ${generators[e].name}</div></a>`
   })
 
-  setTitle("/")
+  setTitle("https://flaringk.github.io/gifstuck/")
 }
 
 const genVarAmountFunc = el => () => {
